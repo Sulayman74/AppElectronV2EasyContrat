@@ -1,0 +1,65 @@
+<div class="title">
+  <p class="h2 text-primary">Modifier votre profil</p>
+</div>
+<section class="edit-container">
+  <form class="formulaire" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Civilite</mat-label>
+      <input type="text" matInput formControlName="civilite" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input type="text" matInput formControlName="nom" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Nom de jeune fille</mat-label>
+      <input type="text" matInput formControlName="nom_jeune_fille" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Prénom</mat-label>
+      <input type="text" matInput formControlName="prenom" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Telephone</mat-label>
+      <input type="text" matInput formControlName="telephone" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Rue</mat-label>
+      <input type="text" matInput formControlName="rue" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Ville</mat-label>
+      <input type="text" matInput formControlName="ville" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Code Postal</mat-label>
+      <input type="text" matInput formControlName="cp" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Numéro de sécurité sociale</mat-label>
+      <input type="text" matInput formControlName="num_ss" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Pays de naissance</mat-label>
+      <input type="text" matInput formControlName="pays_naissance" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Lieu de Naissance</mat-label>
+      <input placeholder="Ville de naissance" type="text" matInput formControlName="lieu_naissance" />
+    </mat-form-field>
+    <div>
+      <mat-label>Date de naissance</mat-label>
+      <p>{{ data.date_naissance | date : "shortDate" }}</p>
+    </div>
+    <div class="bouton">
+      <button mat-raised-button color="accent" type="submit">
+        <mat-icon>done_outline</mat-icon>
+      </button>
+    </div>
+  </form>
+</section>

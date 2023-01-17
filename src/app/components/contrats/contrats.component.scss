@@ -1,0 +1,54 @@
+$primary-color: #6e76a3c5;
+.contenant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  .formulaire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100vw;
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column wrap;
+      height: auto;
+      width: 60%;
+      color: rgb(2, 28, 28);
+
+      .mat-form-field {
+        width: 100%;
+      }
+
+      .radio {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        .mat-radio-group {
+          p {
+            color: black;
+            text-decoration: underline;
+            font-weight: bold;
+          }
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+        }
+      }
+    }
+
+    button {
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 2px 2px 2px black;
+        color: black;
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+<h1 id="title">Formulaire d'inscription</h1>
+<section class="main-container">
+  <form class="formulaire" [formGroup]="registerSociety">
+    <mat-form-field appearance="outline">
+      <mat-label>Civilité</mat-label>
+      <mat-select formControlName="civilite" *ngFor="let item of civilites">
+        <mat-option [value]="item.title1">Monsieur</mat-option>
+        <mat-option [value]="item.title2">Madame</mat-option>
+      </mat-select>
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput placeholder="nom" formControlName="nom" type="text" />
+      <mat-icon matSuffix>person_outline</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Prénom</mat-label>
+      <input
+        matInput
+        placeholder="prenom"
+        type="text"
+        formControlName="prenom"
+      />
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Téléphone</mat-label>
+      <input
+        matInput
+        placeholder="phoneNumber"
+        formControlName="telephone"
+        required
+      />
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Rue</mat-label>
+      <input type="text" matInput placeholder="la rue" formControlName="rue" />
+      <mat-icon matSuffix>location_on</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Code Postale</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="code postal"
+        formControlName="cp"
+      />
+      <mat-icon matSuffix> map</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Ville</mat-label>
+      <input type="text" matInput placeholder="ville" formControlName="ville" />
+      <mat-icon matSuffix> streetview</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        placeholder="email"
+        formControlName="email"
+        type="email"
+        required
+      />
+      <mat-error *ngIf="email.invalid">{{ getErrorMessageMail() }}</mat-error>
+      <mat-icon matSuffix>mail</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="password"
+        formControlName="mdp"
+        required
+      />
+      <mat-icon matSuffix>fingerprint</mat-icon>
+
+      <mat-hint> entre 8 et 12 caractères</mat-hint>
+      <mat-error *ngIf="password.invalid">{{
+        getErrorMessagePassword()
+      }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Numéro de Siret</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Numéro de Siret"
+        formControlName="siret"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Raison Sociale</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Raison Sociale"
+        formControlName="raison_sociale"
+      />
+      <mat-icon matSuffix>home</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Code APE</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Code APE"
+        formControlName="code_ape"
+      />
+      <mat-icon matSuffix>home</mat-icon>
+    </mat-form-field>
+  </form>
+  <button
+    class="valider"
+    (click)="onSubmit()"
+    mat-raised-button
+    color="primary"
+    [disabled]="registerSociety.invalid"
+  >
+    Valider
+  </button>
+</section>
+
+<!-- TODO option disabled du bouton [disabled]="registerSociety.invalid" -->

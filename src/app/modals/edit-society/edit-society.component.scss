@@ -1,0 +1,41 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      height: auto;
+      width: 80%;
+    }
+
+    button {
+      padding: 5px 45px;
+      transition: all ease 0.4s;
+
+      &:hover {
+        background-color: whitesmoke;
+        box-shadow: 5px 3px 2px black;
+        .mat-icon {
+          color: rosybrown;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-container {
+    height: auto;
+  }
+}

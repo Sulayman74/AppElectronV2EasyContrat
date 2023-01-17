@@ -1,0 +1,46 @@
+<section class="main">
+  <mat-form-field appearance="outline" class="search_box"
+    ><mat-label>Recherche</mat-label>
+    <input
+      matInput
+      placeholder="Recherchez un nom.."
+      class="search"
+      [formControl]="searchBar"
+  /></mat-form-field>
+
+  <p class="h2">Mes Contrats</p>
+  <div class="contenant">
+    <div class="cards">
+      <div *ngFor="let item of contratTab">
+        <mat-card class="card">
+          <mat-card-title class="titre-main">Aperçu du Contrat</mat-card-title>
+          <mat-card-header>
+            <mat-card-title id="civilite">Civilite</mat-card-title>
+            <mat-card-subtitle>
+              <p>{{ item.civilite }} {{ item.nom }}</p></mat-card-subtitle
+            >
+          </mat-card-header>
+          <mat-card-header id="fonction">
+            <mat-card-title>Fonction Et Statut</mat-card-title>
+            <mat-card-subtitle>
+              <p>{{ item.fonction }} {{ item.statut }}</p></mat-card-subtitle
+            >
+          </mat-card-header>
+          <mat-card-header id="date">
+            <mat-card-title>Date de contrat</mat-card-title>
+            <mat-card-subtitle>
+              {{ item.date_debut | date : "dd/MM/yyyy" }}
+            </mat-card-subtitle>
+
+            <mat-card-subtitle *ngIf="item.date_fin">
+              au {{ item.date_fin | date : "dd/MM/yyyy" }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <button id="btn-detail" mat-raised-button (click)="onDetails()">
+            details
+          </button>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>

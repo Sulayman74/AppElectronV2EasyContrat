@@ -1,0 +1,76 @@
+$primary-color: #0d3b90;
+$secondary-color: #d85f0280;
+$main-police: "Roboto", sans-serif;
+$second-police: "Montserrat", sans-serif;
+$poppin-police: "Poppins", sans-serif;
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  // margin: 10px 0;
+  border-radius: 3px;
+
+  .titre {
+    font-family: $main-police;
+    transition: all ease 0.4s;
+
+    &:hover {
+      color: black;
+      transform: scale(1.08);
+    }
+  }
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.528);
+  border-radius: 3px;
+  height: 100vh;
+  flex-direction: column;
+
+  .title {
+    font-family: $second-police;
+    transition: all linear 0.4s;
+
+    &:hover {
+      color: whitesmoke;
+    }
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    width: fit-content;
+    height: 13%;
+    width: 20%;
+
+    button {
+      width: 100%;
+      font-family: $poppin-police;
+      font-weight: 500;
+      transition: all ease 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+        color: black;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .toolbar {
+    margin-top: 40px;
+  }
+  .main-content {
+    .btns {
+      width: 60%;
+    }
+  }
+}

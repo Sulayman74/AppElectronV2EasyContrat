@@ -1,0 +1,51 @@
+.formulaire {
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  .titre {
+    color: black;
+  }
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  #main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    border-radius: 3px;
+    .adresse {
+      .mat-form-field {
+        p {
+          padding: 5px;
+        }
+      }
+    }
+    .mat-form-field {
+      padding: 0 80px;
+    }
+  }
+  .button-edition {
+    padding: 0;
+    margin: 0;
+  }
+}
+#edit {
+  margin-top: 15px;
+  padding: 5px 45px;
+  transition: all ease 0.4s;
+
+  &:hover {
+    background-color: whitesmoke;
+    box-shadow: 5px 3px 2px black;
+    .mat-icon {
+      color: blue;
+    }
+  }
+}
